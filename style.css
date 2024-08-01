@@ -59,28 +59,36 @@ body{
     background-color: var(--bg-color);
     color: var(--text-color);
 
-    display: grid;
+    
     height: 100vh;
     place-content: center;
 
 
 }
 #app{
-    display: grid;
-    justify-items: center;
+   height: 100vh;
+   display: grid;
+   place-content: center;
+
 
     
 }
 
 
-.flex{
-    display: flex;
-}
-
 #timer{
+    display:flexbox;
+    align-items: center;
+
+    place-content: center;
+    padding-bottom: 0;  
+
+
+
     font-size: 9.6rem;
     font-weight:  bold;
     font-family: sans-serif;
+
+    
    
 
 
@@ -117,4 +125,69 @@ html:not(.running) .ph-pause-circle,
 html:not(.running) .ph-stop-circle,
 html:not(.music-on) .ph-speaker-high{
     display: none;
+}
+
+
+@media(width > 100vh){
+
+    body{
+        display: grid;
+        place-content: center;
+        grid-template-areas: 
+         "app img "
+         "timer img "
+         "controls img";
+         
+    }
+
+   
+    
+
+    #timer{
+        width:28rem;
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+      
+      
+   
+     
+
+    }
+
+    #controls{
+       
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+    
+    .button{
+        width: 32rem;
+        display: flex;
+        gap: 4rem;
+ 
+    }
+
+    #icons{
+        width:28rem;
+        display:grid;
+        grid-template-areas: " icon-tree icon-rain";
+        place-content: center;
+        margin: 5rem ;
+        gap: 1.5rem;
+    }
+    
+    .icon-active svg .card {
+        fill: #02799D;
+    }
+
+    .icon-active svg .icon {
+        fill: white;
+    }
+
+
+
+
 }
